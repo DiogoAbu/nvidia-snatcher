@@ -20,6 +20,7 @@ import {Ebuyer} from './ebuyer';
 import {Evga} from './evga';
 import {EvgaEu} from './evga-eu';
 import {Gamestop} from './gamestop';
+import {Kabum} from './kabum';
 import {Mediamarkt} from './mediamarkt';
 import {MicroCenter} from './microcenter';
 import {Newegg} from './newegg';
@@ -30,11 +31,13 @@ import {Nvidia} from './nvidia';
 import {NvidiaApi} from './nvidia-api';
 import {OfficeDepot} from './officedepot';
 import {Overclockers} from './overclockers';
+import {Pichau} from './pichau';
 import {Pny} from './pny';
 import {ProshopDE} from './proshop-de';
 import {ProshopDK} from './proshop-dk';
 import {Scan} from './scan';
 import {Store} from './store';
+import {Terabyteshop} from './terabyteshop';
 import {Very} from './very';
 import {Zotac} from './zotac';
 import {config} from '../../config';
@@ -63,6 +66,7 @@ const masterList = new Map([
 	[Evga.name, Evga],
 	[EvgaEu.name, EvgaEu],
 	[Gamestop.name, Gamestop],
+	[Kabum.name, Kabum],
 	[Mediamarkt.name, Mediamarkt],
 	[MicroCenter.name, MicroCenter],
 	[Newegg.name, Newegg],
@@ -73,10 +77,12 @@ const masterList = new Map([
 	[NvidiaApi.name, NvidiaApi],
 	[OfficeDepot.name, OfficeDepot],
 	[Overclockers.name, Overclockers],
+	[Pichau.name, Pichau],
 	[ProshopDE.name, ProshopDE],
 	[ProshopDK.name, ProshopDK],
 	[Pny.name, Pny],
 	[Scan.name, Scan],
+	[Terabyteshop.name, Terabyteshop],
 	[Very.name, Very],
 	[Zotac.name, Zotac]
 ]);
