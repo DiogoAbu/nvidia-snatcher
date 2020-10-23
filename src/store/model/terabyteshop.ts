@@ -19,6 +19,18 @@ export const Terabyteshop: Store = {
 			url: 'https://www.terabyteshop.com.br/produto/12541/placa-de-video-colorful-geforce-rtx-2060-super-8g-v-8gb-gddr6-256bit'
 		},
 		{
+			brand: 'pny',
+			model: 'xlr8 rgb',
+			series: '3070',
+			url: 'https://www.terabyteshop.com.br/produto/15094/placa-de-video-pny-geforce-rtx-3070-xlr8-gaming-epic-x-rgb-triple-8gb-gddr6-256bit-vcg30708tfxppb'
+		},
+		{
+			brand: 'pny',
+			model: 'dual fan',
+			series: '3070',
+			url: 'https://www.terabyteshop.com.br/produto/15088/placa-de-video-pny-geforce-rtx-3070-dual-8gb-gddr6-256bit-vcg30708dfmpb'
+		},
+		{
 			brand: 'gainward',
 			model: 'phoenix gs',
 			series: '3080',
