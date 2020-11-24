@@ -16,7 +16,7 @@ export const Terabyteshop: Store = {
 			brand: 'test:brand',
 			model: 'test:model',
 			series: 'test:series',
-			url: 'https://www.terabyteshop.com.br/produto/12541/placa-de-video-colorful-geforce-rtx-2060-super-8g-v-8gb-gddr6-256bit'
+			url: 'https://www.terabyteshop.com.br/produto/16013/placa-de-video-gigabyte-geforce-rtx-2060-gaming-oc-6gb-gddr6-192bit-gv-n2060gamingoc-pro-6gd-r2'
 		},
 		{
 			brand: 'pny',
@@ -38,13 +38,13 @@ export const Terabyteshop: Store = {
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix oc',
+			model: 'strix oc',
 			series: '3080',
 			url: 'https://www.terabyteshop.com.br/produto/15102/placa-de-video-asus-rog-strix-geforce-rtx-3080-10gb-gddr6x-320bit-rog-strix-rtx3080-o10g-gaming'
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix',
+			model: 'strix',
 			series: '3080',
 			url: 'https://www.terabyteshop.com.br/produto/15104/placa-de-video-asus-rog-strix-geforce-rtx-3080-10gb-gddr6x-320bit-rog-strix-rtx3080-10g-gaming'
 		},
@@ -92,7 +92,7 @@ export const Terabyteshop: Store = {
 		},
 		{
 			brand: 'gainward',
-			model: 'eg gaming white',
+			model: 'ex gaming white',
 			series: '3080',
 			url: 'https://www.terabyteshop.com.br/produto/15130/placa-de-video-galax-geforce-rtx-3080-ex-gaming-white-1-click-oc-10gb-gddr6x-320bit'
 		},
@@ -164,13 +164,13 @@ export const Terabyteshop: Store = {
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix',
+			model: 'strix',
 			series: '3090',
 			url: 'https://www.terabyteshop.com.br/produto/15089/placa-de-video-asus-rog-strix-geforce-rtx-3090-24gb-gddr6x-384bit-rog-strix-rtx3090-24g-gaming'
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix oc',
+			model: 'strix oc',
 			series: '3090',
 			url: 'https://www.terabyteshop.com.br/produto/15101/placa-de-video-asus-rog-strix-geforce-rtx-3090-24gb-gddr6x-384bit-rog-strix-rtx3090-o24g-gaming'
 		},
@@ -236,7 +236,7 @@ export const Terabyteshop: Store = {
 		},
 		{
 			brand: 'pny',
-			model: 'xlr8',
+			model: 'xlr8 rgb',
 			series: '3090',
 			url: 'https://www.terabyteshop.com.br/produto/15091/placa-de-video-pny-geforce-rtx-3090-xlr8-gaming-epic-x-rgb-triple-24gb-gddr6x-384bit-vcg309024tfxmpb'
 		}

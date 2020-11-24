@@ -4,109 +4,231 @@ export const Kabum: Store = {
 	labels: {
 		inStock: {
 			container: '.botao-comprar',
-			text: ['']
+			text: ['comprar']
+		},
+		outOfStock: {
+			container: '.bot_comprar',
+			text: ['indisponível']
 		},
 		maxPrice: {
-			container: '.preco_desconto span span strong',
+			container: '.preco_desconto span strong',
 			euroFormat: true
 		}
 	},
 	links: [
+		// AMD
 		{
-			brand: 'test:brand',
-			model: 'test:model',
-			series: 'test:series',
-			url: 'https://www.kabum.com.br/produto/101967/placa-de-v-deo-gigabyte-nvidia-geforce-rtx-2060-windforce-6g-gddr6-gv-n2060wf2-6gd'
+			brand: 'amd',
+			model: '5950x',
+			series: 'ryzen5950',
+			url: 'https://www.kabum.com.br/produto/129461'
+		},
+		{
+			brand: 'amd',
+			model: '5900x',
+			series: 'ryzen5900',
+			url: 'https://www.kabum.com.br/produto/129460'
+		},
+		{
+			brand: 'amd',
+			model: '5800x',
+			series: 'ryzen5800',
+			url: 'https://www.kabum.com.br/produto/129459'
+		},
+		{
+			brand: 'amd',
+			model: '5600x',
+			series: 'ryzen5600',
+			url: 'https://www.kabum.com.br/produto/129451'
+		},
+		// 3070
+		{
+			brand: 'gigabyte',
+			model: 'gaming oc',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130209'
+		},
+		{
+			brand: 'gigabyte',
+			model: 'eagle oc',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130210'
+		},
+		{
+			brand: 'evga',
+			model: 'xc3 black',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/129938'
+		},
+		{
+			brand: 'gainward',
+			model: 'phoenix',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130435'
+		},
+		{
+			brand: 'asus',
+			model: 'dual fan',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/128634'
+		},
+		{
+			brand: 'asus',
+			model: 'dual fan',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/128635'
+		},
+		{
+			brand: 'msi',
+			model: 'gaming x trio',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130379'
+		},
+		{
+			brand: 'msi',
+			model: 'ventus 3x oc',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130380'
+		},
+		{
+			brand: 'msi',
+			model: 'ventus 2x oc',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130381'
+		},
+		{
+			brand: 'zotac',
+			model: 'twin edge',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/129208'
+		},
+		{
+			brand: 'zotac',
+			model: 'twin edge oc',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/129207'
+		},
+		{
+			brand: 'galax',
+			model: 'sg',
+			series: '3070',
+			url: 'https://www.kabum.com.br/produto/130434'
+		},
+		// 3080
+		{
+			brand: 'msi',
+			model: 'gaming x trio',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/127409'
+		},
+		{
+			brand: 'msi',
+			model: 'ventus 3x',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/127410'
 		},
 		{
 			brand: 'asus',
 			model: 'tuf',
 			series: '3080',
-			url: 'https://www.kabum.com.br/produto/121138/placa-de-v-deo-asus-nvidia-geforce-rtx3080-10gb-gddr6-tuf-rtx3080-10g-gaming'
+			url: 'https://www.kabum.com.br/produto/121138'
 		},
 		{
-			brand: 'zotac',
-			model: 'trinity',
+			brand: 'asus',
+			model: 'tuf oc',
 			series: '3080',
-			url: 'https://www.kabum.com.br/produto/126895/placa-de-v-deo-zotac-nvidia-geforce-rtx-3080-10gb-gddr6x-zt-a30800d-10p'
-		},
-		{
-			brand: 'evga',
-			model: 'xc3',
-			series: '3080',
-			url: 'https://www.kabum.com.br/produto/128051/placa-de-v-deo-evga-nvidia-geforce-rtx-3080-10gb-gddr6x-10g-p5-3883-kr'
-		},
-		{
-			brand: 'msi',
-			model: 'ventus 3x oc',
-			series: '3080',
-			url: 'https://www.kabum.com.br/produto/127410/placa-de-v-deo-msi-nvidia-geforce-rtx-3080-ventus-3x-10g-oc-gddr6x'
-		},
-		{
-			brand: 'msi',
-			model: 'gaming x trio',
-			series: '3080',
-			url: 'https://www.kabum.com.br/produto/127409/placa-de-v-deo-msi-nvidia-geforce-rtx-3080-gaming-x-trio-10g-gddr6x'
+			url: 'https://www.kabum.com.br/produto/127512'
 		},
 		{
 			brand: 'gigabyte',
 			model: 'eagle oc',
 			series: '3080',
-			url: 'https://www.kabum.com.br/produto/128078/placa-de-v-deo-gigabyte-nvidia-geforce-rtx-3080-10gb-gddr6x-gv-n3080eagle-oc-10gd'
-		},
-		{
-			brand: 'gainward',
-			model: 'phoenix gs',
-			series: '3080',
-			url: 'https://www.kabum.com.br/produto/128775/placa-de-v-deo-gainward-nvidia-geforce-nv-rtx3080-10gb-gddr6x-ned3080019ia-132ax'
+			url: 'https://www.kabum.com.br/produto/128078'
 		},
 		{
 			brand: 'evga',
-			model: 'xc3 oc',
+			model: 'xc3 black',
 			series: '3080',
-			url: 'https://www.kabum.com.br/produto/128052/placa-de-v-deo-evga-nvidia-geforce-rtx-3080-10gb-gddr6x-10g-p5-3885-kr'
+			url: 'https://www.kabum.com.br/produto/128050'
 		},
+		{
+			brand: 'evga',
+			model: 'ichill x3',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/128051'
+		},
+		{
+			brand: 'evga',
+			model: 'ftw3',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/128052'
+		},
+		{
+			brand: 'evga',
+			model: 'ichill x3',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/128054'
+		},
+		{
+			brand: 'zotac',
+			model: 'trinity',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/126895'
+		},
+		{
+			brand: 'zotac',
+			model: 'trinity oc',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/127513'
+		},
+		{
+			brand: 'galax',
+			model: 'sg',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/127515'
+		},
+		{
+			brand: 'gigabyte',
+			model: 'gaming oc',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/128077'
+		},
+		{
+			brand: 'gainward',
+			model: 'phoenix',
+			series: '3080',
+			url: 'https://www.kabum.com.br/produto/128775'
+		},
+		// 3090
 		{
 			brand: 'msi',
 			model: 'gaming x trio',
 			series: '3090',
-			url: 'https://www.kabum.com.br/produto/127407/placa-de-v-deo-msi-nvidia-geforce-rtx-3090-gaming-x-trio-24g-gddr6x-'
+			url: 'https://www.kabum.com.br/produto/127407'
+		},
+		{
+			brand: 'msi',
+			model: 'ventus 3x',
+			series: '3090',
+			url: 'https://www.kabum.com.br/produto/127408'
 		},
 		{
 			brand: 'asus',
 			model: 'tuf',
 			series: '3090',
-			url: 'https://www.kabum.com.br/produto/127511/placa-de-v-deo-asus-nvidia-tuf-rtx-3090-24gb-gddr6x-90yv0fd1-m0nm00'
-		},
-		{
-			brand: 'evga',
-			model: 'xc3 oc',
-			series: '3090',
-			url: 'https://www.kabum.com.br/produto/128375/placa-de-v-deo-evga-nvidia-geforce-rtx-3090-24gb-gddr6x-24g-p5-3975-kr'
+			url: 'https://www.kabum.com.br/produto/127511'
 		},
 		{
 			brand: 'asus',
-			model: 'tuf gaming',
+			model: 'strix',
 			series: '3090',
-			url: 'https://www.kabum.com.br/produto/121139/placa-de-v-deo-asus-nvidia-geforce-rtx3090-24gb-gddr6-tuf-rtx3090-24g-gaming'
+			url: 'https://www.kabum.com.br/produto/128026'
 		},
 		{
-			brand: 'asus',
-			model: 'rog strix gaming',
+			brand: 'gigabyte',
+			model: 'gaming',
 			series: '3090',
-			url: 'https://www.kabum.com.br/produto/128026/placa-de-v-deo-asus-nvidia-geforce-rtx-3090-24gb-gddr6x-rog-strix-rtx3090-o24g-gaming-'
-		},
-		{
-			brand: 'msi',
-			model: 'ventus 3x oc',
-			series: '3090',
-			url: 'https://www.kabum.com.br/produto/127408/placa-de-v-deo-msi-nvidia-geforce-rtx-3090-ventus-3x-24g-oc-gddr6x'
-		},
-		{
-			brand: 'gainward',
-			model: 'phoenix',
-			series: '3090',
-			url: 'https://www.kabum.com.br/produto/128776/placa-de-v-deo-gainward-nvidia-geforce-nv-rtx3090-24gb-gddr6x-ned3090019sb-132bx'
+			url: 'https://www.kabum.com.br/produto/128199'
 		}
 	],
 	name: 'kabum'

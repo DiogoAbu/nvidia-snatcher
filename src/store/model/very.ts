@@ -8,6 +8,10 @@ export const Very: Store = {
 			container: '.stockMessaging .indicator',
 			text: ['available', 'low stock']
 		},
+		maxPrice: {
+			container: '.priceNow',
+			euroFormat: false // Note: Very uses non-euroFromat as price seperator
+		},
 		outOfStock: {
 			container: '.stockMessaging .indicator',
 			text: ['pre-order']
@@ -16,9 +20,10 @@ export const Very: Store = {
 	links: [
 		{
 			brand: 'test:brand',
-			model: 'CARD',
+			model: 'test:model',
 			series: 'test:series',
-			url: 'https://www.very.co.uk/msi-geforce-rtx-2060-super-ventus-gp-oc/1600463772.prd'
+			url:
+				'https://www.very.co.uk/msi-geforce-gtx-1660-ti-gaming-x-6g-graphics-card/1600350984.prd'
 		}
 	],
 	linksBuilder: {
@@ -30,9 +35,11 @@ export const Very: Store = {
 				const titleElement = productElement.find('.productTitle').first();
 				const title = titleElement.text()?.replace(/\n/g, ' ').trim();
 
-				if (!title || ['RTX', series]
-					.map(x => title.toLowerCase().includes(x.toLowerCase()))
-					.filter(x => !x).length > 0
+				if (
+					!title ||
+					['RTX', series]
+						.map((x) => title.toLowerCase().includes(x.toLowerCase()))
+						.filter((x) => !x).length > 0
 				) {
 					continue;
 				}
@@ -63,15 +70,18 @@ export const Very: Store = {
 		urls: [
 			{
 				series: '3070',
-				url: 'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
+				url:
+					'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
 			},
 			{
 				series: '3080',
-				url: 'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
+				url:
+					'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
 			},
 			{
 				series: '3090',
-				url: 'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
+				url:
+					'https://www.very.co.uk/electricals/pc-components/graphics-cards/e/b/118786.end?sort=newin,0&numProducts=100'
 			}
 		]
 	},

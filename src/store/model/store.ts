@@ -10,12 +10,116 @@ export type Pricing = {
 	euroFormat?: boolean;
 };
 
-export type Series = 'test:series' | '3070' | '3080' | '3090';
+export type Brand =
+	| 'test:brand'
+	| 'amd'
+	| 'asus'
+	| 'colorful'
+	| 'evga'
+	| 'gainward'
+	| 'galax'
+	| 'gigabyte'
+	| 'inno3d'
+	| 'kfa2'
+	| 'microsoft'
+	| 'msi'
+	| 'nvidia'
+	| 'palit'
+	| 'pny'
+	| 'sony'
+	| 'zotac';
+
+export type Series =
+	| 'test:series'
+	| '3070'
+	| '3080'
+	| '3090'
+	| 'ryzen5600'
+	| 'ryzen5800'
+	| 'ryzen5900'
+	| 'ryzen5950'
+	| 'sonyps5c'
+	| 'sonyps5de'
+	| 'xboxss'
+	| 'xboxsx';
+
+export type Model =
+	| 'test:model'
+	| '5600x'
+	| '5800x'
+	| '5900x'
+	| '5950x'
+	| 'amp extreme holo'
+	| 'amp holo'
+	| 'aorus master'
+	| 'aorus xtreme'
+	| 'aorus'
+	| 'dual fan'
+	| 'dual oc'
+	| 'dual'
+	| 'eagle oc'
+	| 'eagle'
+	| 'ex gaming pink'
+	| 'ex gaming white'
+	| 'ex gaming'
+	| 'founders edition'
+	| 'ftw3 ultra'
+	| 'ftw3'
+	| 'gamerock oc'
+	| 'gaming oc'
+	| 'gaming pro oc'
+	| 'gaming pro'
+	| 'gaming trio'
+	| 'gaming x trio'
+	| 'gaming x3'
+	| 'gaming'
+	| 'ichill x2'
+	| 'ichill x3'
+	| 'ichill x4'
+	| 'igame advanced'
+	| 'igame neptune'
+	| 'igame ultra'
+	| 'igame vulkan'
+	| 'phantom gs'
+	| 'phoenix gs oc'
+	| 'phoenix gs'
+	| 'phoenix'
+	| 'ps5 console'
+	| 'ps5 digital'
+	| 'sg oc'
+	| 'sg'
+	| 'strix oc'
+	| 'strix'
+	| 'trinity oc'
+	| 'trinity'
+	| 'tuf oc'
+	| 'tuf'
+	| 'turbo'
+	| 'twin edge oc'
+	| 'twin edge'
+	| 'twin x2 oc'
+	| 'twin x2'
+	| 'uprising'
+	| 'ventus 2x oc'
+	| 'ventus 2x'
+	| 'ventus 3x oc'
+	| 'ventus 3x'
+	| 'vision oc'
+	| 'vision'
+	| 'xbox series s'
+	| 'xbox series x'
+	| 'xc3 black'
+	| 'xc3 ultra'
+	| 'xc3'
+	| 'xlr8 revel'
+	| 'xlr8 rgb'
+	| 'xlr8 uprising';
 
 export type Link = {
-	brand: 'test:brand' | 'asus' | 'colorful' | 'evga' | 'gainward' | 'galax' | 'gigabyte' | 'inno3d' | 'kfa2' | 'palit' | 'pny' | 'msi' | 'nvidia' | 'zotac';
+	brand: Brand;
+	itemNumber?: string;
 	series: Series;
-	model: string;
+	model: Model;
 	url: string;
 	cartUrl?: string;
 	openCartAction?: (browser: Browser) => Promise<string>;
@@ -33,9 +137,10 @@ export type Labels = {
 	maxPrice?: Pricing;
 };
 
-export type StatusCodeRangeArray = Array<(number | [number, number])>;
+export type StatusCodeRangeArray = Array<number | [number, number]>;
 
 export type Store = {
+	realTimeInventoryLookup?: (itemNumber: string) => Promise<boolean>;
 	/**
 	 * The range of status codes which will trigger backoff, i.e. an increasing
 	 * delay between requests. Setting an empty array will disable the feature.
@@ -60,4 +165,6 @@ export type Store = {
 	 */
 	successStatusCodes?: StatusCodeRangeArray;
 	waitUntil?: LoadEvent;
+	minPageSleep?: number;
+	maxPageSleep?: number;
 };

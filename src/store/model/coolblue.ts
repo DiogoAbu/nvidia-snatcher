@@ -6,6 +6,10 @@ export const Coolblue: Store = {
 			container: '.product-order',
 			text: ['bestel snel', 'morgen in huis']
 		},
+		maxPrice: {
+			container: '.js-order-block .sales-price__current',
+			euroFormat: true
+		},
 		outOfStock: {
 			container: '.product-order',
 			text: ['binnenkort leverbaar', 'tijdelijk uitverkocht']
@@ -56,13 +60,13 @@ export const Coolblue: Store = {
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix oc gaming',
+			model: 'strix oc',
 			series: '3080',
 			url: 'https://www.coolblue.nl/product/868731/'
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix gaming',
+			model: 'strix',
 			series: '3080',
 			url: 'https://www.coolblue.nl/product/868732/'
 		},
@@ -92,13 +96,13 @@ export const Coolblue: Store = {
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix oc gaming',
+			model: 'strix oc',
 			series: '3090',
 			url: 'https://www.coolblue.nl/product/868728/'
 		},
 		{
 			brand: 'asus',
-			model: 'rog strix gaming',
+			model: 'strix',
 			series: '3090',
 			url: 'https://www.coolblue.nl/product/868729/'
 		},

@@ -1,4 +1,5 @@
-import {Stores} from './store/model';
+import {startAPIServer, stopAPIServer} from './web';
+import {Browser} from 'puppeteer';
 import {adBlocker} from './adblocker';
 import {config} from './config';
 import {getSleepTime} from './util';
@@ -6,26 +7,26 @@ import {logger} from './logger';
 import puppeteer from 'puppeteer-extra';
 import resourceBlock from 'puppeteer-extra-plugin-block-resources';
 import stealthPlugin from 'puppeteer-extra-plugin-stealth';
+import {storeList} from './store/model';
 import {tryLookupAndLoop} from './store';
 
 puppeteer.use(stealthPlugin());
 if (config.browser.lowBandwidth) {
-	puppeteer.use(resourceBlock({
-		blockedTypes: new Set(['image', 'font'] as const)
-	}));
+	puppeteer.use(
+		resourceBlock({
+			blockedTypes: new Set(['image', 'font'] as const)
+		})
+	);
 } else {
 	puppeteer.use(adBlocker);
 }
+
+let browser: Browser | undefined;
 
 /**
  * Starts the bot.
  */
 async function main() {
-	if (Stores.length === 0) {
-		logger.error('✖ no stores selected', Stores);
-		return;
-	}
-
 	const args: string[] = [];
 
 	// Skip Chromium Linux Sandbox
@@ -42,10 +43,14 @@ async function main() {
 
 	// Add the address of the proxy server if defined
 	if (config.proxy.address) {
-		args.push(`--proxy-server=http://${config.proxy.address}:${config.proxy.port}`);
+		args.push(
+			`--proxy-server=http://${config.proxy.address}:${config.proxy.port}`
+		);
 	}
 
-	const browser = await puppeteer.launch({
+	await stop();
+
+	browser = await puppeteer.launch({
 		args,
 		defaultViewport: {
 			height: config.page.height,
@@ -54,22 +59,52 @@ async function main() {
 		headless: config.browser.isHeadless
 	});
 
-	for (const store of Stores) {
+	for (const store of storeList.values()) {
 		logger.debug('store links', {meta: {links: store.links}});
 		if (store.setupAction !== undefined) {
 			store.setupAction(browser);
 		}
 
-		setTimeout(tryLookupAndLoop, getSleepTime(), browser, store);
+		setTimeout(tryLookupAndLoop, getSleepTime(store), browser, store);
 	}
+
+	await startAPIServer();
+}
+
+async function stop() {
+	await stopAPIServer();
+
+	if (browser) {
+		// Use temporary swap variable to avoid any race condition
+		const browserTemporary = browser;
+		browser = undefined;
+		await browserTemporary.close();
+	}
+}
+
+async function stopAndExit() {
+	await stop();
+	// eslint-disable-next-line unicorn/no-process-exit
+	process.exit(0);
 }
 
 /**
  * Will continually run until user interferes.
  */
-try {
-	void main();
-} catch (error) {
-	logger.error('✖ something bad happened, resetting nvidia-snatcher', error);
-	void main();
+async function loopMain() {
+	try {
+		await main();
+	} catch (error) {
+		logger.error(
+			'✖ something bad happened, resetting streetmerchant in 5 seconds',
+			error
+		);
+		setTimeout(loopMain, 5000);
+	}
 }
+
+void loopMain();
+
+process.on('SIGINT', stopAndExit);
+process.on('SIGQUIT', stopAndExit);
+process.on('SIGTERM', stopAndExit);
